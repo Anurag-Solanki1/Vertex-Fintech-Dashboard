@@ -86,10 +86,12 @@ desktop.ini
 .history/
 .cache/
 
+# ─── AI / Agent Tools (exclude entirely — not part of source code)
+.agent/
 
-# Commit the skill definitions, NOT runtime caches/secrets
-.agent/.cache/
-.agent/secrets/
+# ─── Design References & Generated Design System Docs
+design-refs/
+design-system/
 
 
 *.tgz
