@@ -1,0 +1,100 @@
+# 
+#  Vertex Terminal 
+#  React + Vite + TypeScript + TailwindCSS
+# 
+
+# ─── Python (UI/UX Pro Max Skill scripts) 
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ─── Dependencies 
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# ─── Build Outputs 
+dist/
+dist-ssr/
+build/
+out/
+.output/
+
+# ─── Vite & Rollup Cache 
+.vite/
+.rollup.cache/
+
+# ─── TypeScript 
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# ─── Environment Variables 
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# ─── Logs 
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── Testing 
+coverage/
+.nyc_output/
+*.lcov
+test-results/
+playwright-report/
+playwright/.cache/
+
+# ─── OS Generated Files 
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── Editor & IDE 
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+.project
+.classpath
+*.code-workspace
+
+# ─── Local Dev Files 
+*.local
+.history/
+.cache/
+
+
+# Commit the skill definitions, NOT runtime caches/secrets
+.agent/.cache/
+.agent/secrets/
+
+
+*.tgz
+*.tar.gz
+*.zip
+.temp/
+tmp/
+temp/

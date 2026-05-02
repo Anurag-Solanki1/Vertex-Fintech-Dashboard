@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#00f0ff",
+                        "tertiary": "#f5f5f5",
+                        "primary": "#dbfcff",
+                        "surface-dim": "#131313",
+                        "secondary-container": "#7701d0",
+                        "inverse-primary": "#006970",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#004f54",
+                        "secondary-fixed": "#efdbff",
+                        "primary-fixed-dim": "#00dbe9",
+                        "on-primary-fixed": "#002022",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error": "#690005",
+                        "surface-tint": "#00dbe9",
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#3b494b",
+                        "outline": "#849495",
+                        "surface": "#131313",
+                        "on-tertiary": "#2f3131",
+                        "on-surface-variant": "#b9cacb",
+                        "on-secondary": "#480081",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-container": "#dcb7ff",
+                        "tertiary-container": "#d9d9d9",
+                        "surface-bright": "#3a3939",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-secondary-fixed-variant": "#6700b5",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed": "#e2e2e2",
+                        "secondary": "#dcb8ff",
+                        "surface-container": "#201f1f",
+                        "primary-fixed": "#7df4ff",
+                        "on-tertiary-container": "#5d5f5f",
+                        "on-secondary-fixed": "#2c0051",
+                        "background": "#131313",
+                        "on-primary": "#00363a",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed-dim": "#dcb8ff",
+                        "on-primary-container": "#006970",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-variant": "#353534"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "unit-lg": "24px",
+                        "container-max": "1440px",
+                        "grid-cols": "12",
+                        "unit-sm": "8px",
+                        "margin": "40px",
+                        "unit-xl": "48px",
+                        "gutter": "24px",
+                        "unit-md": "16px",
+                        "unit-xs": "4px"
+                    },
+                    fontFamily: {
+                        "body-base": ["Inter", "sans-serif"],
+                        "data-point": ["Space Grotesk", "sans-serif"],
+                        "heading-lg": ["Inter", "sans-serif"],
+                        "display-2xl": ["Inter", "sans-serif"],
+                        "label-mono": ["Space Grotesk", "monospace"]
+                    },
+                    fontSize: {
+                        "body-base": ["16px", { lineHeight: "1.6", letterSpacing: "0em", fontWeight: "400" }],
+                        "data-point": ["24px", { lineHeight: "1.1", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "heading-lg": ["32px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "display-2xl": ["72px", { lineHeight: "1.1", letterSpacing: "-0.04em", fontWeight: "700" }],
+                        "label-mono": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #050505; color: #e5e2e1; }
+        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glow-effect { box-shadow: 0 0 20px rgba(0, 240, 255, 0.2); }
+        .text-glow { text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
+    </style>
+</head>
+<body class="antialiased min-h-screen overflow-x-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col w-64 h-screen fixed left-0 top-0 pt-24 pb-8 px-6 bg-black/40 backdrop-blur-2xl border-r border-white/10 z-40">
+<div class="absolute top-8 left-6">
+<h1 class="text-2xl font-black text-primary-container tracking-tighter uppercase">Aura</h1>
+<p class="text-[10px] text-white/40 tracking-widest uppercase mt-1">Institutional Grade</p>
+</div>
+<div class="flex-1 mt-12 space-y-2">
+<a class="flex items-center space-x-3 px-4 py-3 rounded text-primary-container bg-primary-container/10 border-r-2 border-primary-container shadow-[0_0_20px_rgba(0,240,255,0.2)] font-inter text-sm spring-duration-500" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded text-white/40 hover:bg-white/5 hover:text-white transition-all font-inter text-sm spring-duration-500" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded text-white/40 hover:bg-white/5 hover:text-white transition-all font-inter text-sm spring-duration-500" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span>Wallets</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded text-white/40 hover:bg-white/5 hover:text-white transition-all font-inter text-sm spring-duration-500" href="#">
+<span class="material-symbols-outlined">candlestick_chart</span>
+<span>Trading</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded text-white/40 hover:bg-white/5 hover:text-white transition-all font-inter text-sm spring-duration-500" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span>Security</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded text-white/40 hover:bg-white/5 hover:text-white transition-all font-inter text-sm spring-duration-500" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span>Terminal</span>
+</a>
+</div>
+<div class="mt-auto pt-6 border-t border-white/10">
+<button class="w-full py-3 px-4 bg-white/5 border border-white/20 rounded text-sm font-semibold hover:border-primary-container hover:text-primary-container transition-all flex items-center justify-center space-x-2">
+<span class="material-symbols-outlined text-sm">link</span>
+<span>Connect Wallet</span>
+</button>
+</div>
+</nav>
+<!-- TopNavBar (Mobile) -->
+<header class="md:hidden flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/10 shadow-[0_0_15px_rgba(0,240,255,0.1)]">
+<h1 class="text-xl font-bold tracking-tighter text-white uppercase font-inter">Aura</h1>
+<div class="flex items-center space-x-4">
+<button class="text-white/60 hover:text-primary-container transition-all duration-300 ease-out">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-white/60 hover:text-primary-container transition-all duration-300 ease-out">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 md:ml-64 pt-24 md:pt-12 px-6 md:px-margin pb-24 max-w-[container-max] mx-auto w-full relative">
+<!-- Ambient Background Glows -->
+<div class="fixed top-20 left-1/4 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-20 right-1/4 w-96 h-96 bg-secondary-container/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Hero Metric Card -->
+<div class="col-span-1 md:col-span-8 glass-panel rounded-xl p-unit-lg relative overflow-hidden group hover:border-white/20 transition-all duration-500">
+<div class="flex justify-between items-start mb-unit-xl">
+<div>
+<h2 class="font-label-mono text-label-mono text-white/50 uppercase tracking-widest mb-2">Total Balance</h2>
+<div class="font-display-2xl text-display-2xl text-white tracking-tight">
+                            $142,500<span class="text-white/30 text-4xl">.00</span>
+</div>
+</div>
+<div class="flex items-center space-x-2 bg-primary-container/10 px-3 py-1.5 rounded-sm border border-primary-container/30 text-primary-container">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="font-label-mono text-label-mono">+12.4%</span>
+</div>
+</div>
+<!-- Sparkline Placeholder -->
+<div class="h-32 w-full mt-4 relative">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 30">
+<path d="M0,30 L0,20 C10,25 20,10 30,15 C40,20 50,5 60,10 C70,15 80,5 90,8 C95,9 100,2 100,2 L100,30 Z" fill="url(#grad1)" opacity="0.2"></path>
+<path class="glow-effect" d="M0,20 C10,25 20,10 30,15 C40,20 50,5 60,10 C70,15 80,5 90,8 C95,9 100,2 100,2" fill="none" stroke="#00f0ff" stroke-width="0.5"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#00f0ff;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#00f0ff;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-unit-sm">
+<button class="flex-1 glass-panel rounded-xl p-unit-md flex items-center justify-between group hover:border-primary-container/50 transition-all duration-300">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded bg-white/5 flex items-center justify-center group-hover:bg-primary-container/20 group-hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">send</span>
+</div>
+<span class="font-heading-lg text-body-base font-semibold">Transfer</span>
+</div>
+<span class="material-symbols-outlined text-white/30 group-hover:text-primary-container">arrow_forward</span>
+</button>
+<button class="flex-1 glass-panel rounded-xl p-unit-md flex items-center justify-between group hover:border-primary-container/50 transition-all duration-300">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded bg-white/5 flex items-center justify-center group-hover:bg-primary-container/20 group-hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">download</span>
+</div>
+<span class="font-heading-lg text-body-base font-semibold">Receive</span>
+</div>
+<span class="material-symbols-outlined text-white/30 group-hover:text-primary-container">arrow_forward</span>
+</button>
+<button class="flex-1 glass-panel rounded-xl p-unit-md flex items-center justify-between group hover:border-secondary-container/50 transition-all duration-300">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded bg-white/5 flex items-center justify-center group-hover:bg-secondary-container/20 group-hover:text-[#dcb7ff] transition-colors">
+<span class="material-symbols-outlined">swap_horiz</span>
+</div>
+<span class="font-heading-lg text-body-base font-semibold">Swap</span>
+</div>
+<span class="material-symbols-outlined text-white/30 group-hover:text-[#dcb7ff]">arrow_forward</span>
+</button>
+</div>
+<!-- 3D Virtual Card -->
+<div class="col-span-1 md:col-span-6 glass-panel rounded-xl p-unit-lg flex flex-col justify-center items-center min-h-[300px] relative overflow-hidden">
+<span class="absolute top-unit-lg left-unit-lg font-label-mono text-label-mono text-white/50 uppercase">Active Node</span>
+<div class="w-72 h-44 rounded-xl border border-white/20 p-6 relative overflow-hidden" style="background: linear-gradient(135deg, rgba(0,240,255,0.1) 0%, rgba(119,1,208,0.1) 100%); backdrop-filter: blur(10px); transform: perspective(1000px) rotateX(10deg) rotateY(-10deg); box-shadow: -10px 20px 30px rgba(0,0,0,0.5), 0 0 20px rgba(0,240,255,0.2);">
+<!-- Noise Overlay -->
+<div class="absolute inset-0 opacity-20 mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+<div class="flex justify-between items-start relative z-10">
+<div class="w-10 h-6 bg-white/20 rounded-sm"></div>
+<span class="material-symbols-outlined text-white/80">contactless</span>
+</div>
+<div class="absolute bottom-6 left-6 right-6 z-10">
+<div class="font-data-point text-data-point tracking-widest text-white/90 mb-2">**** **** **** 8042</div>
+<div class="flex justify-between items-end">
+<div class="font-label-mono text-[10px] text-white/60">SYSTEM NODE <br/> <span class="text-white">AURA-X</span></div>
+<div class="font-label-mono text-[10px] text-white/60">VAL <br/> <span class="text-white">12/28</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Transactions -->
+<div class="col-span-1 md:col-span-6 glass-panel rounded-xl p-unit-lg">
+<div class="flex justify-between items-center mb-6">
+<span class="font-label-mono text-label-mono text-white/50 uppercase">Network Log</span>
+<button class="text-white/40 hover:text-white text-sm">View All</button>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between py-3 border-b border-white/5 group hover:bg-white/5 px-2 rounded transition-colors -mx-2">
+<div class="flex items-center space-x-4">
+<div class="w-2 h-2 rounded-full bg-[#00f0ff] shadow-[0_0_8px_#00f0ff]"></div>
+<div>
+<div class="font-body-base text-body-base text-white">ETH Deposit</div>
+<div class="font-label-mono text-label-mono text-white/40 mt-1">Today, 14:32:01</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-data-point text-body-base text-[#00f0ff]">+ 4.50 ETH</div>
+<div class="font-label-mono text-label-mono text-white/40 mt-1">Completed</div>
+</div>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-white/5 group hover:bg-white/5 px-2 rounded transition-colors -mx-2">
+<div class="flex items-center space-x-4">
+<div class="w-2 h-2 rounded-full bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.6)] animate-pulse"></div>
+<div>
+<div class="font-body-base text-body-base text-white">Smart Contract Execution</div>
+<div class="font-label-mono text-label-mono text-white/40 mt-1">Today, 12:05:44</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-data-point text-body-base text-white">- 0.05 ETH</div>
+<div class="font-label-mono text-label-mono text-yellow-400/80 mt-1">Pending Confirmations</div>
+</div>
+</div>
+<div class="flex items-center justify-between py-3 group hover:bg-white/5 px-2 rounded transition-colors -mx-2">
+<div class="flex items-center space-x-4">
+<div class="w-2 h-2 rounded-full bg-[#00f0ff] shadow-[0_0_8px_#00f0ff]"></div>
+<div>
+<div class="font-body-base text-body-base text-white">USDC Transfer</div>
+<div class="font-label-mono text-label-mono text-white/40 mt-1">Yesterday, 09:12:30</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-data-point text-body-base text-white">- 1,200.00 USDC</div>
+<div class="font-label-mono text-label-mono text-white/40 mt-1">Completed</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
