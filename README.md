@@ -1,73 +1,154 @@
-# React + TypeScript + Vite
+# Vertex Terminal — Institutional FinTech OS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A premium, institutional-grade FinTech dashboard UI built with React, TypeScript, and TradingView. OLED-dark, glassmorphism design system with real-time crypto data, full auth suite, and Web3 wallet connection flow.
 
-Currently, two official plugins are available:
+![Vertex Terminal](./public/vertex-logo.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📊 Trading Terminal
+- **Live TradingView Advanced Chart** — real-time Binance streaming data (BTC, ETH, BNB, SOL, ADA, AVAX)
+- Pair selector with instant chart symbol switching
+- Professional execution panel (Market/Limit/Stop orders UI)
+- Order book, recent trades, and position management panels
 
-## Expanding the ESLint configuration
+### 🔐 Authentication Suite
+- **Login** — glassmorphism card with email/password, Google & GitHub OAuth buttons
+- **Signup** — Full Name, email, password with animated entrance
+- **Connect Wallet** — 6 wallet providers: MetaMask, WalletConnect, Coinbase, Trust Wallet, Ledger, Phantom
+  - Animated connection states (connecting → success → error)
+  - Brand-accurate SVG icons with per-wallet glow effects
+  - Self-custody security notice
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🏠 Dashboard Pages
+| Page | Description |
+|---|---|
+| **Overview** | Portfolio balance, P&L chart (Recharts), asset allocation, quick stats |
+| **Analytics** | Market charts, volume trends, historical performance |
+| **Wallets** | Multi-chain wallet management, Aura Visa card component |
+| **Trading** | Full TradingView terminal with execution panel |
+| **Security** | 2FA, session management, security audit panel |
+| **Terminal** | Typewriter-style command terminal interface |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🎨 Design System
+- **OLED-first dark mode** (`#050508` base)
+- **Glassmorphism** cards with `backdrop-blur` and gradient borders
+- **Animated background beams** (full-screen SVG animation)
+- **Framer Motion** page transitions and staggered card entrances
+- **Cyan/Teal accent** (`#00F0FF` / `#26A69A`) — institutional palette
+- **Vertex logo** (AI-generated, 3D glassmorphism "V" mark)
+- Google Font: **Inter** (Outfit, JetBrains Mono for terminal)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🧩 Effects Components
+- `BackgroundBeams` — animated SVG beam background
+- `BorderBeam` / `GlassCard` — glassmorphism card wrappers
+- `MagicCard` — interactive hover card effect
+- `MeteorCard` — animated meteor shower card
+- `NumberTicker` — animated number counter
+- `TypewriterTerminal` — terminal-style typewriter
+- `AuraVisaCard` — premium card component
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🛠 Tech Stack
+
+| Technology | Version | Purpose |
+|---|---|---|
+| React | 18 | UI Framework |
+| TypeScript | 5 | Type safety |
+| Vite | 5 | Build tool & dev server |
+| TailwindCSS | 3 | Utility-first styling |
+| Framer Motion | 11 | Animations & transitions |
+| TradingView Widget | latest | Live market charts |
+| React Router DOM | 6 | Client-side routing |
+| TanStack Query | 5 | Async state management |
+| Recharts | 2 | Overview/Analytics charts |
+| Lucide React | latest | Icon system |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Anurag-Solanki1/Vertex-Fintech-Dashboard.git
+cd Vertex-Fintech-Dashboard
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── effects/          # Visual effect components
+│   │   ├── BackgroundBeams.tsx
+│   │   ├── BorderBeam.tsx
+│   │   ├── MagicCard.tsx
+│   │   └── ...
+│   └── layout/
+│       ├── DashboardLayout.tsx
+│       └── Sidebar.tsx
+├── pages/
+│   ├── auth/
+│   │   ├── AuthLayout.tsx
+│   │   ├── Login.tsx
+│   │   ├── Signup.tsx
+│   │   └── ConnectWallet.tsx
+│   ├── Overview.tsx
+│   ├── Analytics.tsx
+│   ├── Trading.tsx
+│   ├── Wallets.tsx
+│   ├── Security.tsx
+│   └── Terminal.tsx
+├── hooks/
+│   └── useAuraData.ts    # Mock data hooks
+├── lib/
+│   ├── mockData.ts
+│   └── utils.ts
+└── App.tsx               # Routes
+```
+
+---
+
+## 🔌 Connecting a Real Backend
+
+This project is a **production-ready UI template**. To connect real services:
+
+- **Auth** → Replace login/signup handlers with Auth0, Firebase, or Supabase
+- **Wallet** → Replace mock `handleConnect` with `wagmi` + `viem` hooks
+- **Market Data** → Replace `mockData.ts` with Binance/CoinGecko REST API calls
+- **Orders** → Wire execution panel to your trading API endpoint
+
+---
+
+## 📄 License
+
+MIT License — free to use for personal and commercial projects.
+
+---
+
+*Built with ❤️ using React + Vite + TailwindCSS*
