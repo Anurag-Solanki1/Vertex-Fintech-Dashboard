@@ -4,14 +4,14 @@ import { Cpu, Wifi } from 'lucide-react'
 
 export const AuraVisaCard = () => {
   return (
-    <div className="w-full h-full flex items-center justify-center p-4 perspective-[1200px]">
+    <div className="w-full flex items-center justify-center perspective-[1200px] py-2">
       <motion.div
         className="relative w-full max-w-[320px] aspect-[1.586/1] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,240,255,0.15)]"
         style={{ transformStyle: 'preserve-3d' }}
         animate={{
-          rotateY: [-10, 10, -10],
-          rotateX: [5, -5, 5],
-          y: [-5, 5, -5],
+          rotateY: [-6, 6, -6],
+          rotateX: [2, -2, 2],
+          y: [-3, 3, -3],
         }}
         transition={{
           duration: 8,
@@ -35,40 +35,40 @@ export const AuraVisaCard = () => {
         />
 
         {/* Card Content */}
-        <div className="absolute inset-0 p-5 flex flex-col justify-between z-10">
+        <div className="absolute inset-0 p-4 flex flex-col justify-between z-10">
           {/* Top Row: Chip, Contactless & Logo */}
           <div className="flex justify-between items-start">
             <div className="flex gap-3 items-center">
               <motion.div 
-                className="w-10 h-7 rounded bg-gradient-to-br from-[#d4af37] via-[#f3e5ab] to-[#aa8000] flex items-center justify-center opacity-90 shadow-[inset_0_1px_4px_rgba(0,0,0,0.5)] border border-yellow-600/50"
+                className="w-9 h-6 rounded bg-gradient-to-br from-[#d4af37] via-[#f3e5ab] to-[#aa8000] flex items-center justify-center opacity-90 shadow-[inset_0_1px_4px_rgba(0,0,0,0.5)] border border-yellow-600/50"
               >
-                <Cpu size={16} className="text-black/60" />
+                <Cpu size={14} className="text-black/60" />
               </motion.div>
-              <Wifi size={20} className="text-white/40 rotate-90" />
+              <Wifi size={16} className="text-white/40 rotate-90" />
             </div>
             <div className="text-right">
-              <span className="text-xl font-bold tracking-widest text-white italic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" style={{ fontFamily: 'Inter' }}>
+              <span className="text-lg font-bold tracking-widest text-white italic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" style={{ fontFamily: 'Inter' }}>
                 VISA
               </span>
             </div>
           </div>
 
           {/* Middle Row: Card Number */}
-          <div className="mt-6">
-            <p className="font-mono text-xl tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/50 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+          <div>
+            <p className="font-mono text-lg tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/50 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
               4291 •••• •••• 8832
             </p>
           </div>
 
           {/* Bottom Row: Name & Expiry */}
-          <div className="flex justify-between items-end mt-2">
+          <div className="flex justify-between items-end">
             <div>
-              <p className="text-[8px] text-[#00F0FF]/60 uppercase tracking-widest mb-0.5 font-semibold">Cardholder</p>
-              <p className="text-xs font-semibold tracking-widest text-white uppercase drop-shadow-md">Aura Node System</p>
+              <p className="text-[7px] text-[#00F0FF]/60 uppercase tracking-widest mb-0.5 font-semibold">Cardholder</p>
+              <p className="text-[10px] font-semibold tracking-widest text-white uppercase drop-shadow-md">Vertex Capital</p>
             </div>
             <div className="text-right">
-              <p className="text-[8px] text-[#00F0FF]/60 uppercase tracking-widest mb-0.5 font-semibold">Valid Thru</p>
-              <p className="text-xs font-mono tracking-wider text-white drop-shadow-md">12/28</p>
+              <p className="text-[7px] text-[#00F0FF]/60 uppercase tracking-widest mb-0.5 font-semibold">Valid Thru</p>
+              <p className="text-[10px] font-mono tracking-wider text-white drop-shadow-md">12/28</p>
             </div>
           </div>
         </div>

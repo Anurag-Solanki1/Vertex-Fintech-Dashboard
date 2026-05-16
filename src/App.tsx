@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { DashboardLayout } from '@/components/layout/DashboardLayout'
 import Overview from '@/pages/Overview'
+import OverviewV2 from '@/pages/OverviewV2'
 import Analytics from '@/pages/Analytics'
 import Wallets from '@/pages/Wallets'
 import Trading from '@/pages/Trading'
@@ -36,6 +37,7 @@ export default function App() {
           {/* Dashboard Routes */}
           <Route element={<DashboardLayout />}>
             <Route path="/" element={<Overview />} />
+            <Route path="/v2" element={<OverviewV2 />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/wallets" element={<Wallets />} />
             <Route path="/trading" element={<Trading />} />

@@ -35,9 +35,6 @@ export function Sidebar() {
               Vertex
             </h1>
           </div>
-          <p className="text-[9px] text-white/30 tracking-[0.18em] uppercase ml-10">
-            Institutional Grade
-          </p>
         </motion.div>
       </div>
 

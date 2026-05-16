@@ -1,6 +1,6 @@
-# Vertex Terminal — Institutional FinTech OS
+# Vertex Terminal — FinTech Workspace
 
-> A premium, institutional-grade FinTech dashboard UI built with React, TypeScript, and TradingView. OLED-dark, glassmorphism design system with real-time crypto data, full auth suite, and Web3 wallet connection flow.
+A premium FinTech dashboard UI built with React, TypeScript, and TradingView. OLED-dark, glassmorphism design system with real-time crypto data, full auth suite, and Web3 wallet connection flow.
 
 ![Vertex Terminal](./public/vertex-logo.png)
 
@@ -37,7 +37,7 @@
 - **Glassmorphism** cards with `backdrop-blur` and gradient borders
 - **Animated background beams** (full-screen SVG animation)
 - **Framer Motion** page transitions and staggered card entrances
-- **Cyan/Teal accent** (`#00F0FF` / `#26A69A`) — institutional palette
+- **Cyan/Teal accent** (`#00F0FF` / `#26A69A`) — premium palette
 - **Vertex logo** (AI-generated, 3D glassmorphism "V" mark)
 - Google Font: **Inter** (Outfit, JetBrains Mono for terminal)
 
@@ -144,11 +144,3 @@ This project is a **production-ready UI template**. To connect real services:
 - **Orders** → Wire execution panel to your trading API endpoint
 
 ---
-
-## 📄 License
-
-MIT License — free to use for personal and commercial projects.
-
----
-
-*Built with ❤️ using React + Vite + TailwindCSS*
